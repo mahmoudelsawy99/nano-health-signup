@@ -1,0 +1,88 @@
+<section>
+
+  <div class="promo">Try it free 7 days then $20/mo. thereafter</div>
+  <div class="form-container">
+    <form [formGroup]="signupForm" (ngSubmit)="onSubmit()">
+      <div class="form-group">
+        <input
+          type="text"
+          formControlName="firstName"
+          placeholder="First Name"
+          [class.is-invalid]="signupForm.get('firstName')?.invalid && signupForm.get('firstName')?.touched"
+        />
+        <div class="error-message" *ngIf="signupForm.get('firstName')?.invalid && signupForm.get('firstName')?.touched">
+          <svg width="24" height="24" xmlns="http://www.w3.org/2000/svg">
+            <g fill="none" fill-rule="evenodd">
+              <circle fill="#FF7979" cx="12" cy="12" r="12"></circle>
+              <rect fill="#FFF" x="11" y="6" width="2" height="9" rx="1"></rect>
+              <rect fill="#FFF" x="11" y="17" width="2" height="2" rx="1"></rect>
+            </g>
+          </svg>
+          <span>
+            First Name cannot be empty
+          </span>
+        </div>
+      </div>
+      
+      <div class="form-group">
+        <input
+          type="text"
+          formControlName="lastName"
+          placeholder="Last Name"
+          [class.is-invalid]="signupForm.get('lastName')?.invalid && signupForm.get('lastName')?.touched"
+        />
+        <div class="error-message" *ngIf="signupForm.get('lastName')?.invalid && signupForm.get('lastName')?.touched">
+         <svg width="24" height="24" xmlns="http://www.w3.org/2000/svg">
+            <g fill="none" fill-rule="evenodd">
+              <circle fill="#FF7979" cx="12" cy="12" r="12"></circle>
+              <rect fill="#FFF" x="11" y="6" width="2" height="9" rx="1"></rect>
+              <rect fill="#FFF" x="11" y="17" width="2" height="2" rx="1"></rect>
+            </g>
+          </svg>
+          Last Name cannot be empty
+        </div>
+      </div>
+      <div class="form-group">
+        <input
+          type="email"
+          formControlName="email"
+          placeholder="Email Address"
+          [class.is-invalid]="signupForm.get('email')?.invalid && signupForm.get('email')?.touched"
+        />
+        <div class="error-message" *ngIf="signupForm.get('email')?.invalid && signupForm.get('email')?.touched">
+         <svg width="24" height="24" xmlns="http://www.w3.org/2000/svg">
+            <g fill="none" fill-rule="evenodd">
+              <circle fill="#FF7979" cx="12" cy="12" r="12"></circle>
+              <rect fill="#FFF" x="11" y="6" width="2" height="9" rx="1"></rect>
+              <rect fill="#FFF" x="11" y="17" width="2" height="2" rx="1"></rect>
+            </g>
+          </svg>
+          Looks like this is not an email
+        </div>
+      </div>
+      <div class="form-group">
+        <input
+          type="password"
+          formControlName="password"
+          placeholder="Password"
+          [class.is-invalid]="signupForm.get('password')?.invalid && signupForm.get('password')?.touched"
+        />
+        <div class="error-message" *ngIf="signupForm.get('password')?.invalid && signupForm.get('password')?.touched">
+         <svg width="24" height="24" xmlns="http://www.w3.org/2000/svg">
+            <g fill="none" fill-rule="evenodd">
+              <circle fill="#FF7979" cx="12" cy="12" r="12"></circle>
+              <rect fill="#FFF" x="11" y="6" width="2" height="9" rx="1"></rect>
+              <rect fill="#FFF" x="11" y="17" width="2" height="2" rx="1"></rect>
+            </g>
+          </svg>
+          Password cannot be empty
+        </div>
+      </div>
+      <button type="submit"  >CLAIM YOUR FREE TRIAL</button>
+      <p class="terms">
+        By clicking the button, you are agreeing to our
+        <span class="highlight text-danger">Terms and Services</span>.
+      </p>
+    </form>
+  </div>
+</section>
